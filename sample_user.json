@@ -1,0 +1,12 @@
+[
+ { "UserName":"devnameone",
+   "Directory":"production",
+   "Region":"us-east-1",
+   "Team":"frontend"
+ },
+ { "UserName":"devnametwo",
+   "Directory":"production",
+   "Region":"ca-central-1",
+   "Team":"backend"
+ }
+]

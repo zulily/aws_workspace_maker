@@ -1,0 +1,51 @@
+{
+    "secret_info": {
+        "region": "(replace_with_region_like_us-east-1)",
+        "suffix": "(replace_with_suffix)",
+        "key": "(replace_with_key_name)"
+    },
+    "gitlab_url": "(replace_with_gitlab_fqdn_like_https://gitlab.sample.com)",
+    "gitlab_project_id": "(replace_with_gitlab_project_id_like_1234)",
+    "gitlab_filename": "(replace_with_users_filename_like_workspaces.json)",
+    "gitlab_branch": "(replace_with_target_branch_like_main)",
+    "team_workspaces": {
+        "(team1_name)": {
+            "VolumeEncryptionKey": "(replace_with_aws_kms_global_key_like_mrk-123456789abcdef0123456789abcdef0)",
+            "UserVolumeEncryptionEnabled": true,
+            "RootVolumeEncryptionEnabled": true,
+            "WorkspaceProperties": {
+                "RunningMode": "ALWAYS_ON",
+                "RootVolumeSizeGib": 80,
+                "UserVolumeSizeGib": 50,
+                "ComputeTypeName": "POWER"
+            },
+            "Tags": [
+                { "Key": "team", "Value": "(team1_name)" },
+                { "Key": "env", "Value": "(prod)" },
+                { "Key": "project-id", "Value": "(123456789012)" },
+                { "Key": "service", "Value": "workspaces" }
+            ]
+        },
+        "(team2_name)": {
+            "VolumeEncryptionKey": "(replace_with_aws_kms_global_key_like_mrk-abcdef0123456789abcdef0123456789)",
+            "UserVolumeEncryptionEnabled": true,
+            "RootVolumeEncryptionEnabled": true,
+            "WorkspaceProperties": {
+                "RunningMode": "AUTO_STOP",
+                "RootVolumeSizeGib": 80,
+                "UserVolumeSizeGib": 100,
+                "ComputeTypeName": "PERFORMANCE"
+            },
+            "Tags": [
+                { "Key": "team", "Value": "(team2_name" },
+                { "Key": "env", "Value": "(prod)" },
+                { "Key": "project-id", "Value": "(1232456789111" },
+                { "Key": "service", "Value": "workspaces" }
+            ]
+        }
+    },
+    "directory_suffixes": ["(replace_with_suffix_like_production)", "admin", "test"],
+    "directory_suffixes_non_encrypted": ["(replace_with_suffix_to_override_encryption_for_image_creation_like_admin)"],
+    "supported_prefix": "(replace_with_prefix_used_for_managed_images_and_bundles_like_zara)",
+    "supported_regions": ["(replace_with_region_like_us-east-1)", "(replace_with_region_like_eu-west-1)"]
+}
